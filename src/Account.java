@@ -63,5 +63,30 @@ public class Account {
         System.out.println("D. View previous transaction");
         System.out.println("E. Calculate interest");
         System.out.println("F. Exit");
+
+        do {
+            System.out.println();
+            System.out.println("Enter an option: ");
+            char option1 = scanner.next().charAt(0);
+            option = Character.toUpperCase(option1);
+            System.out.println();
+
+            switch(option) {
+                //Case A allows users to check their balance
+                case 'A':
+                    System.out.println("=======================");
+                    System.out.println("Balance = $" + balance);
+                    System.out.println("=======================");
+                    System.out.println();
+                    break;
+                //Case B allows users to make deposits
+                case 'B':
+                    System.out.println("Enter a deposit amount: ");
+                    int amount = scanner.nextInt();
+                    deposit(amount);
+                    System.out.println();
+                    break;
+            }
+        }
     }
 }
