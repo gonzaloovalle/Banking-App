@@ -86,7 +86,34 @@ public class Account {
                     deposit(amount);
                     System.out.println();
                     break;
+                //Case C allows users to make withdrawals
+                case 'C':
+                    System.out.println("Enter a withdrawal amount: ");
+                    int amount2 = scanner.nextInt();
+                    withdraw(amount2);
+                    System.out.println();
+                    break;
+                //Case D allows users to see their last transaction
+                case 'D':
+                    System.out.println("=======================");
+                    getPreviousTransaction();
+                    System.out.println("=======================");
+                    break;
+                //Case E shows users how much money they can accrue in interest over an amount of years
+                case 'E':
+                    System.out.println("Enter how many years of accrued interest: ");
+                    int years = scanner.nextInt();
+                    calculateInterest(years);
+                    break;
+                //Case F exits users from their account
+                case 'F':
+                    System.out.println("=======================");
+                    break;
+                //Default case lets users know when they have entered an invalid option
+                default:
+                    System.out.println("Error: invalid option. Please enter A, B, C, D, E, or F.");
             }
-        }
+        } while(option != 'F');
+        System.out.println("Thank you for banking with us!");
     }
 }
